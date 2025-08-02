@@ -29,7 +29,7 @@ class Tracker():
         detections = self.detect(video_frames)
 
         tracks = {
-                    'player': [],
+                    'players': [],
                     'referee': [],
                     'ball':    []
                 }
@@ -46,7 +46,7 @@ class Tracker():
             detection_supervision = sv.Detections.from_ultralytics(detection)
             track_detection_supervision = self.tracker.update_with_detections(detection_supervision)
             
-            tracks['player'].append({})
+            tracks['players'].append({})
             tracks['referee'].append({})
             tracks['ball'].append({})
             # print("frame_nums-   ", frame_num )
@@ -56,7 +56,7 @@ class Tracker():
                 tracker_id = tracks_detection_info[4]
                 # print(" class_id  - ", class_id , "  bbox  -  ",bbox)
                 if class_id == class_name_inv['player']:
-                    tracks['player'][frame_num][tracker_id] = {'bbox':bbox}
+                    tracks['players'][frame_num][tracker_id] = {'bbox':bbox}
                 if class_id == class_name_inv['referee']:
                     tracks['referee'][frame_num][tracker_id] = {'bbox':bbox}
                 if class_id == class_name_inv['ball']:
@@ -132,7 +132,7 @@ class Tracker():
         for frame_num,frame in enumerate(frames):
             frame = frame.copy()
             # print("length of track player - - ",len(tracks['player'][frame_num]))
-            player_dict = tracks['player'][frame_num]
+            player_dict = tracks['players'][frame_num]
             ball_dict = tracks['ball'][frame_num]
             for track_id,player in player_dict.items():
                 bbox = player['bbox']
