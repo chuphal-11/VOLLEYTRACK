@@ -8,40 +8,38 @@ It also supports simple action recognition (like serve, pass, spike, etc.) and s
 
 
 ## 📂 Project Structure
+```
 VOLLEYTRACK/
-├── actions/
-│   ├── __init__.py
-│   ├── __pycache__/
-│   │   ├── __init__.cpython-310.pyc
-│   │   └── actions_reco.cpython-310.pyc
-│   └── actions_reco.py
+├── actions/                # Action recognition module
+│   ├── actions_reco.py
 ├── LICENSE
-├── main.py
-├── mod/
+├── main.py                 # Entry point
+├── mod/                    # Model weights
 │   └── action_detection_3.pt
-├── output/
+├── output/                 # Processed videos
 │   ├── 1_simple st.avi
 │   ├── 1_video.avi
 │   ├── 2_add ball.avi
 │   └── add_action.avi
 ├── README.md
-├── Tracker/
-│   ├── __init__.py
-│   ├── __pycache__/
-│   │   ├── __init__.cpython-310.pyc
-│   │   └── tracker.cpython-310.pyc
+├── Tracker/                # Tracking module
 │   └── tracker.py
-├── Tracking_history/
+├── Tracking_history/       # Saved track histories
 │   ├── tracks_7.pkl
 │   └── tracks.pkl
-├── utils/
-│   ├── __init__.py
-│   ├── __pycache__/
-│   │   ├── __init__.cpython-310.pyc
-│   │   ├── bbox_utils.cpython-310.pyc
-│   │   └── video_utils.cpython-310.pyc
+├── utils/                  # Helper functions
 │   ├── bbox_utils.py
 │   └── video_utils.py
-└── volleball.py
-
+└── volleball.py            # Main pipeline script
 ```
+
+---
+
+## 📌 Notes
+- Input: Any volleyball match video/clip.  
+- Output: Tracked video + optional action recognition overlay.  
+
+---
+
+## 📜 License
+This project is released under the MIT License.
