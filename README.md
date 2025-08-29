@@ -6,27 +6,21 @@ It also supports simple action recognition (like serve, pass, spike, etc.) and s
 ## 📹 Demo Video
 ➡️![Demo](assets/video_1.gif)
 
-<<<<<<< Updated upstream
 =======
 ---
 
 ## 🖼️ Git Diagram
 ![Git Diagram](assets/diagram.png)
 
->>>>>>> Stashed changes
-
 ## 📂 Project Structure
 ```
 VOLLEYTRACK/
 ├── actions/                # Action recognition module
 │   ├── actions_reco.py
-<<<<<<< Updated upstream
 =======
 ├── assets
 │   ├── diagram.png
-│   └── video_1.gif
->>>>>>> Stashed changes
-├── LICENSE
+│   └── video_1.gif├── LICENSE
 ├── main.py                 # Entry point
 ├── mod/                    # Model weights
 │   └── action_detection_3.pt
